@@ -1,0 +1,8 @@
+data/
+dist/
+node_modules/
+.DS_Store
+.env
+.env.local
+Kapde-Design-System.pptx
+canva-slides/
