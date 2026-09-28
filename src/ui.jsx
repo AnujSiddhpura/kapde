@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { RULES } from './lib/rules'
 import { studentCopy as S, tStaff } from './lib/i18n'
 
-export function Logo({ color = '#000000' }) {
+export function Logo({ color = '#1C75BC' }) {
   return (
     <svg className="logo" viewBox="0 0 84 84" aria-hidden="true">
       <path d="M42 6 74 24v36L42 78 10 60V24Z" fill="none" stroke={color} strokeWidth="2.4" />
@@ -17,7 +17,7 @@ export function Logo({ color = '#000000' }) {
 export function LineArt() {
   return (
     <svg className="line-art" viewBox="0 0 220 18" fill="none" aria-hidden="true">
-      <path d="M4 9h212" stroke="#000" strokeOpacity=".18" strokeWidth="1" />
+      <path d="M4 9h212" stroke="#1C75BC" strokeOpacity=".28" strokeWidth="1" />
     </svg>
   )
 }

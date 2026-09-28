@@ -102,10 +102,12 @@ function SummaryCard({ lang, go }) {
       <h3>{dayName()}</h3>
       <div className="grid">
         <div className="full">{active.length ? active.join(' · ') : T(lang, 'noHostel')}</div>
-        <div>{T(lang, 'regular')} {regular}</div>
-        <div>{T(lang, 'extraShort')} {extra}</div>
         {Object.keys(byFloor).length === 0 && <div className="full">{T(lang, 'noBags')}</div>}
         {Object.entries(byFloor).map(([k, n]) => <div className="full" key={k}>{k}: {n}</div>)}
+      </div>
+      <div className="summary-pair">
+        <div className="summary-reg"><span>{T(lang, 'regular')}</span>{regular}</div>
+        <div className="summary-extra"><span>{T(lang, 'extraShort')}</span>{extra}</div>
       </div>
       {jump && <button className="go" onClick={() => go('hostel', { hostel: jump, from: 'home' })}>{jump}</button>}
     </div>
@@ -123,11 +125,11 @@ export function StaffHome({ lang, go, openProfile }) {
       />
       <SummaryCard lang={lang} go={go} />
       <div className="staff-dock">
-        <button className="tile" onClick={() => go('hostels')}>{Ico.home}{T(lang, 'hostel')}</button>
-        <button className="tile" onClick={() => go('lostfound')}>{Ico.pin}{T(lang, 'lostFound')}</button>
-        <button className="tile" onClick={() => go('complaints')}>{Ico.issue}{T(lang, 'complaints')}</button>
-        <button className="tile" onClick={() => go('announcements')}>{Ico.bell}{T(lang, 'announcements')}</button>
-        <button className="tile" onClick={() => go('extra')}>{Ico.extra}{T(lang, 'extra')}</button>
+        <button className="tile tile-hostel" onClick={() => go('hostels')}>{Ico.home}{T(lang, 'hostel')}</button>
+        <button className="tile tile-lost" onClick={() => go('lostfound')}>{Ico.pin}{T(lang, 'lostFound')}</button>
+        <button className="tile tile-complaints" onClick={() => go('complaints')}>{Ico.issue}{T(lang, 'complaints')}</button>
+        <button className="tile tile-announce" onClick={() => go('announcements')}>{Ico.bell}{T(lang, 'announcements')}</button>
+        <button className="tile tile-extra" onClick={() => go('extra')}>{Ico.extra}{T(lang, 'extra')}</button>
       </div>
       <RulesFooter lang={lang} />
     </div>
